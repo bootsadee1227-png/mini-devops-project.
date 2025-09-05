@@ -2,53 +2,160 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Portfolio นักศึกษา</title>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Itim', cursive;
+      background: radial-gradient(circle at top left, #fff0f5, #ffe4e1); /* พาสเทลชมพูอ่อน */
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      height: 38vh;
+      background: radial-gradient(circle at center, #ffd6e0, #ffb6b9); /* พาสเทลชมพู/ส้มอ่อน */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 6px rgba(0,0,0,0.15); }
+    header p { font-size: 1.2rem; }
+    header blockquote {
+      font-size: 1.1rem;
+      margin-top: 15px;
+      color: #fffbea;
+      font-style: italic;
+    }
+
+    main { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
+    .about h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #ff9aa2; }
+
+    .students {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .student-card {
+      width: 100%;
+      background: radial-gradient(circle at top left, #fff1f3, #ffe6ea); /* พาสเทลอ่อน */
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .student-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #ff9aa2;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .student-card h3 { margin: 10px 0 5px; font-size: 1.3rem; }
+    .nickname { color: #ff9aa2; font-weight: bold; margin-bottom: 5px; }
+
+    .students .last { grid-column: 2 / 3; }
+
+    .quote {
+      text-align: center;
+      margin: 50px 0;
+      font-size: 1.2rem;
+      color: #ff9aa2;
+      font-style: italic;
+    }
+
+    footer {
+      background: radial-gradient(circle at bottom right, #ffd6e0, #ffb6b9);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+      font-size: 1rem;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+
+    @media (max-width: 700px) {
+      .students { grid-template-columns: 1fr; }
+      .students .last { grid-column: auto; justify-self: center; }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="overlay"></div>
-    <div class="intro">
-      <img src="คิดถึงเพียงแต่เธอรู้ไหม.jpg" alt="Profile" class="profile-pic">
-      <h1>นายตัวอย่าง นักศึกษา</h1>
-      <p>รหัสนักศึกษา: 650123456</p>
-    </div>
+    <h1>แนะนำตัวนักศึกษา</h1>
+    <p>วิทยาลัยเทคนิคลำปาง</p>
+    <blockquote>"การเรียนรู้ไม่ใช่การแข่งขันกับใคร แต่คือการพัฒนาตัวเองให้ดีกว่าเมื่อวาน"</blockquote>
   </header>
 
   <main>
     <section class="about">
-      <h2>ประวัติ</h2>
-      <p>
-        สวัสดีครับ ผมเป็นนักศึกษามหาวิทยาลัย... คณะ... สาขา...
-        สนใจด้านการพัฒนาเว็บไซต์ การเขียนโปรแกรม และการทำงาน DevOps
-        ชอบเรียนรู้เทคโนโลยีใหม่ ๆ และการทำงานเป็นทีม
-      </p>
-    </section>
+      <h2>รายชื่อนักศึกษา</h2>
+      <div class="students">
+        <div class="student-card">
+          <img src="แอน.jpg" alt="Profile 1" class="profile-pic">
+          <h3>นางสาวแสงดาว ปราณี</h3>
+          <p class="nickname">(แอน)</p>
+          <p>รหัส: 67319010025</p>
+        </div>
 
-    <section class="interests">
-      <h2>สิ่งที่สนใจ</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="images/web.png" alt="Web Development">
-          <h3>Web Development</h3>
-          <p>การสร้างเว็บไซต์ที่ใช้งานง่าย สวยงาม และมีประสิทธิภาพ</p>
+        <div class="student-card">
+          <img src="แพท.jpg" alt="Profile 2" class="profile-pic">
+          <h3>นางสาวบุตสดี แฮตุ้ย</h3>
+          <p class="nickname">(แพท)</p>
+          <p>รหัส: 67319010030</p>
         </div>
-        <div class="card">
-          <img src="images/cloud.png" alt="Cloud Computing">
-          <h3>Cloud Computing</h3>
-          <p>การประยุกต์ใช้ระบบ Cloud เช่น AWS, Azure, GCP</p>
+
+        <div class="student-card">
+          <img src="ปอ.jpg" alt="Profile 3" class="profile-pic">
+          <h3>นายรุ่งคมสัน มณีสาร</h3>
+          <p class="nickname">(ปอ)</p>
+          <p>รหัส: 67319010031</p>
         </div>
-        <div class="card">
-          <img src="images/ai.png" alt="Machine Learning">
-          <h3>Machine Learning</h3>
-          <p>การวิเคราะห์ข้อมูลและพัฒนาโมเดลเพื่อแก้ปัญหาต่าง ๆ</p>
+
+        <div class="student-card">
+          <img src="วินนิ่ง.jpg" alt="Profile 4" class="profile-pic">
+          <h3>นายนันทพัฒน์ ผาลัง</h3>
+          <p class="nickname">(วินนิ่ง)</p>
+          <p>รหัส: 67319010042</p>
+        </div>
+
+        <div class="student-card last">
+          <img src="หนึ่ง.jpg" alt="Profile 5" class="profile-pic">
+          <h3>นายสิทธิชาติ หมายมั่น</h3>
+          <p class="nickname">(หนึ่ง)</p>
+          <p>รหัส: 67319010042</p>
         </div>
       </div>
     </section>
+
+    <div class="quote">
+      "ความพยายามในวันนี้ จะกลายเป็นความสำเร็จในวันข้างหน้า"
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 นายตัวอย่าง นักศึกษา | Contact: example@email.com</p>
+    <p>© 2025 วิทยาลัยเทคนิคลำปาง</p>
   </footer>
 </body>
 </html>
