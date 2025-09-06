@@ -41,20 +41,35 @@
     main { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
     .about h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #ff9aa2; }
 
+    /* เรียงแถวเดียวแนวนอน */
     .students {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      flex-wrap: nowrap;
+      overflow-x: auto;       /* เลื่อนซ้าย–ขวาได้ถ้าเกินจอ */
+      padding: 10px;
+      scrollbar-width: thin;  /* Firefox */
+    }
+    .students::-webkit-scrollbar {
+      height: 8px;
+    }
+    .students::-webkit-scrollbar-thumb {
+      background: #ff9aa2;
+      border-radius: 10px;
     }
 
     .student-card {
-      width: 100%;
+      min-width: 200px;
       background: radial-gradient(circle at top left, #fff1f3, #ffe6ea); /* พาสเทลอ่อน */
       border-radius: 20px;
       text-align: center;
       padding: 20px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      flex: 0 0 auto; /* ไม่ให้บีบการ์ด */
+      text-decoration: none; /* ตัดเส้นใต้ลิงก์ */
+      color: inherit;
     }
 
     .student-card:hover {
@@ -74,8 +89,6 @@
     .student-card h3 { margin: 10px 0 5px; font-size: 1.3rem; }
     .nickname { color: #ff9aa2; font-weight: bold; margin-bottom: 5px; }
 
-    .students .last { grid-column: 2 / 3; }
-
     .quote {
       text-align: center;
       margin: 50px 0;
@@ -94,11 +107,6 @@
       border-top-left-radius: 30px;
       border-top-right-radius: 30px;
     }
-
-    @media (max-width: 700px) {
-      .students { grid-template-columns: 1fr; }
-      .students .last { grid-column: auto; justify-self: center; }
-    }
   </style>
 </head>
 <body>
@@ -112,40 +120,40 @@
     <section class="about">
       <h2>รายชื่อนักศึกษา</h2>
       <div class="students">
-        <div class="student-card">
+        <a href="profile.html?id=ann" class="student-card">
           <img src="แอน.jpg" alt="Profile 1" class="profile-pic">
           <h3>นางสาวแสงดาว ปราณี</h3>
           <p class="nickname">(แอน)</p>
           <p>รหัส: 67319010025</p>
-        </div>
+        </a>
 
-        <div class="student-card">
+        <a href="profile.html?id=pat" class="student-card">
           <img src="แพท.jpg" alt="Profile 2" class="profile-pic">
           <h3>นางสาวบุตสดี แฮตุ้ย</h3>
           <p class="nickname">(แพท)</p>
           <p>รหัส: 67319010030</p>
-        </div>
+        </a>
 
-        <div class="student-card">
+        <a href="profile.html?id=por" class="student-card">
           <img src="ปอ.jpg" alt="Profile 3" class="profile-pic">
           <h3>นายรุ่งคมสัน มณีสาร</h3>
           <p class="nickname">(ปอ)</p>
           <p>รหัส: 67319010031</p>
-        </div>
+        </a>
 
-        <div class="student-card">
+        <a href="profile.html?id=winning" class="student-card">
           <img src="วินนิ่ง.jpg" alt="Profile 4" class="profile-pic">
           <h3>นายนันทพัฒน์ ผาลัง</h3>
           <p class="nickname">(วินนิ่ง)</p>
           <p>รหัส: 67319010038</p>
-        </div>
+        </a>
 
-        <div class="student-card last">
+        <a href="profile.html?id=neung" class="student-card">
           <img src="หนึ่ง.jpg" alt="Profile 5" class="profile-pic">
           <h3>นายสิทธิชาติ หมายมั่น</h3>
           <p class="nickname">(หนึ่ง)</p>
           <p>รหัส: 67319010042</p>
-        </div>
+        </a>
       </div>
     </section>
 
