@@ -41,7 +41,7 @@ header p {
 }
 
 .student-card {
-  background: radial-gradient(circle at top left, #fff7f5, #ffe0de); /* โทนสีรุ่งอ่อน */
+  background: radial-gradient(circle at top left, #ff967b, #ffe0de); /* โทนสีรุ่งอ่อน */
   border-radius: 20px;
   text-align: center;
   padding: 20px;
@@ -71,7 +71,7 @@ header p {
 
 footer {
   background: radial-gradient(circle at bottom right, #ff9a76, #ff6f61); /* สีรุ่งเข้ม */
-  color: #fff;
+  color: #080101;
   text-align: center;
   padding: 20px;
   margin-top: 50px;
